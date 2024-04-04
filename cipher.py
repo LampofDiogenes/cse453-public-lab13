@@ -63,19 +63,53 @@ class Cipher:
     # TODO: ADD description
     ##########################################################################
     def encrypt(self, plaintext, password):
+        cipher = ""
         for character in plaintext:
-            if character > password.length():
-                pa
-        plaintext
-        # TODO - Add your code here
-        ciphertext = str
-        return ciphertext
+            position = len(password)
+
+            # this will only allow the password position to be as long as the possword length.
+            # if it is greater, then the password loops to the beginning
+            pass_position = position % len(password)
+            
+            # get the ASCII values for the character given
+            ASCII_char = ord(character)
+            ASCII_pass = ord(password[pass_position])
+
+            # add the ASCII values together
+            ASCII_cipher = ASCII_char + ASCII_pass
+
+            # return the character for the ASCII addition
+            cipher_char = chr(ASCII_cipher)
+
+            # add the character to the ciphertext
+            cipher += cipher_char
+        return cipher
 
     ##########################################################################
     # DECRYPT
     # TODO: ADD description
     ##########################################################################
     def decrypt(self, ciphertext, password):
-        plaintext = ciphertext
-        # TODO - Add your code here
+        plaintext = ""
+        for character in ciphertext:
+            position = len(password)
+
+            # this will only allow the password position to be as long as the possword length.
+            # if it is greater, then the password loops to the beginning
+            pass_position = position % len(password)
+            
+            # get the ASCII values for the character given
+            ASCII_cipher = ord(character)
+            ASCII_pass = ord(password[pass_position])
+
+            # add the ASCII values together
+            ASCII_plain = 256 + ASCII_cipher - ASCII_pass
+            ASCII_check = ASCII_plain % 256
+
+
+            # return the character for the ASCII addition
+            plain_char = chr(ASCII_check)
+
+            # add the character to the ciphertext
+            plaintext += plain_char
         return plaintext
