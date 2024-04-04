@@ -19,11 +19,11 @@ class Cipher:
 
     def get_author(self):
         # TODO: Return your name
-        return "author"
+        return "Kaleb Bradford"
 
     def get_cipher_name(self):
         # TODO: Return the cipher name
-        return "cipher name"
+        return "AutoKey Cipher"
 
     ##########################################################################
     # GET CIPHER CITATION
@@ -31,7 +31,7 @@ class Cipher:
     ##########################################################################
     def get_cipher_citation(self):
         # TODO: This function should return your citation(s)
-        return "citation"
+        return "citation: http://practicalcryptography.com/ciphers/classical-era/autokey/"
 
     ##########################################################################
     # GET PSEUDOCODE
@@ -41,10 +41,20 @@ class Cipher:
         # TODO: This function should return your psuedocode, neatly formatted
 
         # The encrypt pseudocode
-        pc = "insert the encryption pseudocode\n"
+        pc = "encrypt(plainText, password)\n" \
+             "   FOR character in plainText\n" \
+             "      cipher_ASCII = plain_ASCII + Pass_ASCII\n" \
+             "      Cipherchar = get_char(cipher_ASCII)\n" \
+             "      cipherText += Cipherchar\n" \
+             "   RETURN cipherText\n\n"
 
         # The decrypt pseudocode
-        pc += "insert the decryption pseudocode\n"
+        pc += "decrypt(cipherText, password)\n" \
+             "   FOR character in cipherText\n" \
+             "      plain_ASCII = ASCII_total + cipher_ASCII - Pass_ASCII\n" \
+             "      PlainChar = get_char(plain_ASCII)\n" \
+             "      plainText += Cipherchar\n" \
+             "   RETURN plainText\n\n"
 
         return pc
 
@@ -53,8 +63,12 @@ class Cipher:
     # TODO: ADD description
     ##########################################################################
     def encrypt(self, plaintext, password):
-        ciphertext = plaintext
+        for character in plaintext:
+            if character > password.length():
+                pa
+        plaintext
         # TODO - Add your code here
+        ciphertext = str
         return ciphertext
 
     ##########################################################################

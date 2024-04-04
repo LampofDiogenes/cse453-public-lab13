@@ -22,10 +22,10 @@ class Example:
                               - ord(self._value_minimum) + 1
 
     def get_author(self):
-        return "Brother Helfrich, adapted to Python by Kyle Mueller"
+        return "Kaleb Bradford"
 
     def get_cipher_name(self):
-        return "Caesar Cipher"
+        return "Undetermined Cipher"
 
     ############################################################
     # GET CIPHER CITATION
